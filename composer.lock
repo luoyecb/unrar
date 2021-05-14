@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d0d45d01cdac9da54c3b40cc10989a2a",
+    "packages": [
+        {
+            "name": "luoyecb/arg_parser",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/luoyecb/arg_parser.git",
+                "reference": "a1080434c732aea85e020285c27a7eefcd7d140f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/luoyecb/arg_parser/zipball/a1080434c732aea85e020285c27a7eefcd7d140f",
+                "reference": "a1080434c732aea85e020285c27a7eefcd7d140f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Luoyecb\\": "src/Luoyecb"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "luoyecb",
+                    "email": "luoyecb@163.com"
+                }
+            ],
+            "description": "A simple command line option parser.",
+            "keywords": [
+                "arg parser",
+                "command line",
+                "getopt",
+                "option parser"
+            ],
+            "support": {
+                "source": "https://github.com/luoyecb/arg_parser/tree/master",
+                "issues": "https://github.com/luoyecb/arg_parser/issues"
+            },
+            "time": "2021-05-14 05:38:46"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "luoyecb/arg_parser": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0"
+    },
+    "platform-dev": []
+}

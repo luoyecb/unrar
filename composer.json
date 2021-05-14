@@ -1,0 +1,26 @@
+{
+    "name": "luoyecb/unrar",
+    "type": "library",
+    "description": "Rar decompression.",
+    "keywords": ["unrar", "rar", "decompression"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "luoyecb",
+            "email": "luoyecb@163.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/luoyecb/arg_parser"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "luoyecb/arg_parser": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"Luoyecb\\": "src/Luoyecb"}
+    }
+}
