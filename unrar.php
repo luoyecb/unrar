@@ -51,4 +51,3 @@ function execMain() {
 if (PHP_SAPI == "cli") {
 	execMain();
 }
-

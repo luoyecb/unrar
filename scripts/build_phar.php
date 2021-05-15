@@ -6,17 +6,18 @@ use Luoyecb\ArgParser;
 
 function execMain() {
 	$parser = new ArgParser();
-	$parser->addBool('help', false);
-	$parser->addBool('execMode', true);
-	$parser->addString('dir', '');
-	$parser->addString('output', '');
-	$parser->addString('index', '');
-	$parser->parse();
+	$parser->addBool('help', false, 'Show this help information.')
+		->addBool('execMode', true, 'Can execute?')
+		->addString('dir', '', 'Build from the directory.')
+		->addString('output', '', 'Output phar file name.')
+		->addString('index', '', 'Bootstrap file.')
+		->parse();
 	extract($parser->getOptions());
 
 	global $argc;
 	if ($help || $argc == 1 || empty($dir) || empty($output)) {
-		printUsage();
+		echo $parser->buildUsage();
+		echo PHP_EOL;
 		return;
 	}
 
@@ -30,24 +31,6 @@ function execMain() {
 		}
 		$phar->setStub($stub);
 	}
-}
-
-function printUsage() {
-    global $argv;
-    $basename = basename($argv[0]);
-    echo <<<"USAGE_STR"
-Usage:
-    php {$basename} [option]
-
-option:
-    -help:     Show this help information.
-    -execMode: Can execute?
-    -dir:      Build from the directory.
-    -output:   Output phar file name.
-    -index:    Bootstrap file.
-USAGE_STR;
-    echo PHP_EOL;
-    echo PHP_EOL;
 }
 
 if (PHP_SAPI == "cli") {

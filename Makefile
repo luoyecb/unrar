@@ -6,6 +6,7 @@ default: build
 env:
 	@echo === php version ===
 	@php -v
+	@echo
 
 clean:
 	rm -rf *.phar
