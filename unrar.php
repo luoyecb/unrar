@@ -7,12 +7,13 @@ function execMain() {
 	$parser = new ArgParser();
 	$parser->addString("f", "");
 	$parser->addString("d", "");
+	$parser->addString("p", "");
 	$parser->parse();
 	extract($parser->getOptions());
 
 	// parse args
 	if (empty($f)) {
-		echo "Usage: \n\tunrar -f {filename} -d {dir}\n";
+		echo "Usage: \n\tunrar -f {filename} -d {dir} -p {password}\n";
 		exit();
 	}
 	$realname = realpath($f);
@@ -23,8 +24,14 @@ function execMain() {
 		$extractDir = dirname($realname);
 	}
 
+	// password
+	$password = NULL;
+	if (!empty($p)) {
+		$password = $p;
+	}
+
 	// rar
-	$rar = RarArchive::open($realname);
+	$rar = RarArchive::open($realname, $password);
 	if ($rar === false) {
 		exit("open file error.\n");
 	}
